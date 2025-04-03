@@ -9,7 +9,7 @@ class GoogleScraper(BaseScraper):
         self.base_url = config["url"]
         self.keywords = config["keywords"]
         self.company_name = config["name"]
-        
+
         self.year_of_exp = self.filter_config.get("max_years_experience", 5)
         self.max_post_day = self.filter_config.get("post_day", 30)
         self.locations = self.filter_config["locations"]
@@ -40,7 +40,7 @@ class GoogleScraper(BaseScraper):
                     
                     job_id = job.get("id", "").split("/")[-1]
                     job_url = job.get("apply_url", "N/A")
-                    
+                    job_title = job.get("title", "N/A")
 
                     qual_html = job.get("qualifications", "")
                     if not self.get_required_experience_from_qualifications(qual_html, self.year_of_exp):
@@ -49,9 +49,12 @@ class GoogleScraper(BaseScraper):
                     if not self.is_recent(job.get("created"), self.max_post_day):
                         continue
 
+                    if not self.check_title_ok(job_title):
+                        continue
+
                     all_jobs.append({
                         "company": self.company_name,
-                        "title": job.get("title", "N/A"),
+                        "title": job_title,
                         "id": job_id,
                         "location": job.get("locations", ["N/A"])[0]['display'],
                         "url": job_url,

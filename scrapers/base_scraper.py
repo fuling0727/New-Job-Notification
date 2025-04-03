@@ -53,3 +53,10 @@ class BaseScraper(ABC):
             if int(match) > max_years:
                 return False  # Too senior
         return True
+    
+    def check_title_ok(self, title: str) -> bool:
+        if not title:
+            return False
+        title = title.lower()
+        excluded_keywords = self.filter_config.get("exclude_keywords", [])
+        return not any(keyword in title for keyword in excluded_keywords)
