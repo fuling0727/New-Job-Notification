@@ -1,0 +1,6 @@
+{
+    "locations": ["United States"],
+    "max_years_experience": 2,
+    "post_day": 1,
+    "exclude_keywords": ["manager", "lead", "director", "head"]
+}
