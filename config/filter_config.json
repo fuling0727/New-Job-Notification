@@ -1,6 +1,7 @@
 {
     "locations": ["United States"],
     "max_years_experience": 2,
-    "post_day": 1,
-    "exclude_keywords": ["manager", "lead", "director", "head"]
+    "post_day": 2,
+    "keywords": ["Software Engineer", "SDE", "Backend", "Machine Learning", "Software Developer"],
+    "exclude_keywords": ["manager", "lead", "director", "head", "principle", "senior", "distinguished"]
 }

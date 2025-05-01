@@ -1,9 +1,19 @@
 {
     "google": {
         "name": "Google",
-        "url": "https://careers.google.com/api/v3/search/",
-        "keywords": ["Software Engineer", "SWE", "Backend", "Machine Learning", "Software Developer"]
-        
+        "url": "https://careers.google.com/api/v3/search/"
+    },
+    "meta": {
+        "name": "Meta",
+        "url": "https://www.metacareers.com/graphql"
+    },
+    "amazon": {
+        "name": "Amazon",
+        "url": "https://www.amazon.jobs/en/search.json"
+    },
+    "greenhouse": {
+        "name": "Greenhouse",
+        "slugs": ["roblox", "airtable", "databricks", "stripe", "notion"]
     }
   }
   
